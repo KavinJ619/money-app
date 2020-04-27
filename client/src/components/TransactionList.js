@@ -23,41 +23,50 @@ class TransactionList extends Component{
 
     render() {
         const { transactions } = this.props.transaction
-        return(
-            <Container>
-                <TransitionGroup>
-                    {transactions.map(( {_id,title,amount,date}) => (
-                        <CSSTransition key={_id} timeout={500} classNames="fade">
-                            <div className="transaction-item">
-                                <Button 
-                                    className="remove-button"
-                                    color="danger" 
-                                    size="sm"
-                                    onClick={this.onDeleteClick.bind(this, _id)}>
-                                    &times;
-                                </Button>
-                                <div className="transaction-list-title">
-                                    Title: {title}
+        if (transactions===undefined){
+            return(
+                <div>Loading....</div>
+            )
+        }
+        else{
+            return(
+            
+                <Container>
+                    <TransitionGroup>
+                        {transactions.map(( {_id,title,amount,date}) => (
+                            <CSSTransition key={_id} timeout={500} classNames="fade">
+                                <div className="transaction-item">
+                                    <Button 
+                                        className="remove-button"
+                                        color="danger" 
+                                        size="sm"
+                                        onClick={this.onDeleteClick.bind(this, _id)}>
+                                        &times;
+                                    </Button>
+                                    <div className="transaction-list-title">
+                                        Title: {title}
+                                    </div>
+                                    <div className="transaction-list-amount">
+                                        Amount: ${amount}
+                                    </div>
+                                    <div className="transaction-list-date">
+                                        Date: <b>{date}</b>
+                                    </div>
+                                    
+                                    <div className={ amount>0 ? "pos" : "neg"} />
+                                    
                                 </div>
-                                <div className="transaction-list-amount">
-                                    Amount: ${amount}
-                                </div>
-                                <div className="transaction-list-date">
-                                    Date: <b>{date}</b>
-                                </div>
-                                
-                                <div className={ amount>0 ? "pos" : "neg"} />
-                                
-                            </div>
-                    
-                        </CSSTransition>
                         
-                    ))}
-                </TransitionGroup>
-                
-                
-            </Container>
-        )
+                            </CSSTransition>
+                            
+                        ))}
+                    </TransitionGroup>
+                    
+                    
+                </Container>
+            )
+        }
+        
     }
 
 }
