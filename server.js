@@ -18,14 +18,16 @@ mongoose
 
 
 
+if (process.env.NODE_ENV==='production'){
+    let root = path.join(__dirname, 'client', 'build/')
+    app.use(express.static(root))
+    app.use(function(req, res, next) {
+        if (req.method === 'GET' && req.accepts('html') && !req.is('json') && !req.path.includes('.')) {
+            res.sendFile('index.html', { root })
+        } else next()
+    })
+}
 
-let root = path.join(__dirname, 'client', 'build/')
-app.use(express.static(root))
-app.use(function(req, res, next) {
-  if (req.method === 'GET' && req.accepts('html') && !req.is('json') && !req.path.includes('.')) {
-    res.sendFile('index.html', { root })
-  } else next()
-})
 
 app.use("/api/transactions", transactions)
 

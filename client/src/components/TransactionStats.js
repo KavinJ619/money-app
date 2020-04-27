@@ -6,11 +6,12 @@ import PropTypes from "prop-types"
 
 class TransactionStats extends Component {
     render(){
-
+        console.log(this.props.transaction)
         const { transactions } = this.props.transaction
+        
         let totalDebit=0;
 
-        transactions.map(({amount})=>{
+        this.props.transaction.transactions.map(({amount})=>{
             totalDebit+=parseFloat(amount);
         });
         totalDebit=totalDebit.toFixed(2);
@@ -66,9 +67,7 @@ TransactionStats.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    transaction: state.transaction,
-    income: state.income,
-    remainder: state.remainder
+    transaction: state.transaction
 })
 
 export default connect(mapStateToProps, { getStats })(TransactionStats)

@@ -28,7 +28,10 @@ class TransactionList extends Component{
                 <div>Loading....</div>
             )
         }
+
         else{
+
+            
             return(
             
                 <Container>
