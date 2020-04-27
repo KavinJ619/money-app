@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');
+
+
+.remove-btn{
+    margin-right: 2rem;
+}
+
+.fade-enter{
+    opacity: 0.01;
+}
+
+.fade-enter-active{
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.fade-exit{
+    opacity: 1;
+}
+
+.fade-exit-active{
+    opacity: 0.01;
+    transition: opacity 500ms ease-in;
+}
+
+.transaction-item{
+    display: flex;
+    margin-bottom: 25px;
+    box-shadow: 0px 1px 5px 2px rgba(148,148,148,1);
+    height: 55px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    align-items: center;
+    
+}
+
+.remove-button{
+    width: 40px;
+    height:100%;
+}
+
+.transaction-list-title{
+    text-align: left;
+    width: 20%;
+    margin-left: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.transaction-list-amount{
+    text-align: center;
+    width: 40%;
+    font-family: 'Nunito Sans', sans-serif;
+    
+}
+
+.stats-wrapper{
+    display: flex;
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+    box-shadow: 0px -1px 5px -1px rgba(0,0,0,0.75);
+    align-items: center;
+
+}
+
+.stats-income{
+    width: 50%;
+    text-align: center;
+    border-right: 1.5px solid black;
+    font-size: 35px;
+    color: #17D65E;
+}
+
+.stats-remainder{
+    width: 50%;
+    text-align: center;
+    font-size: 35px;
+    color: #B02000;
+}
+
+.neg{
+    background-color: #CD2A2A;
+    width: 30px;
+    height: 100%;
+    text-align: center;
+    margin-left: auto;
+}
+
+.pos{
+    background-color: green;
+    width: 30px;
+    height: 100%;
+    text-align: center;
+    margin-left: auto;
+}
+
+.addtransButton{
+    background-color: purple;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.addtransButton:hover{
+    background-color: white;
+    color: purple;
+}
+
+.income-stats{
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 35px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.income-header h3{
+    font-size: 45px;
+    letter-spacing: 3px;
+}
+
+.income-income{
+    font-size: 33px;
+    letter-spacing: 5px;
+}
+
+.pieChartTrans{
+    margin-top: 30px;
+}
